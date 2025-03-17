@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #90c837;
+        }
+
+        .form-container {
+            background-color:  white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .star {
+            font-size: 30px;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .star.selected {
+            color: gold;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Feedback</h2>
+        <p>Rate your experience:</p>
+        <div class="star-rating">
+            <span class="star" data-rating="1">&#9733;</span>
+            <span class="star" data-rating="2">&#9733;</span>
+            <span class="star" data-rating="3">&#9733;</span>
+            <span class="star" data-rating="4">&#9733;</span>
+            <span class="star" data-rating="5">&#9733;</span>
+        </div>
+        <textarea id="feedbackText" placeholder="Leave a comment..."></textarea>
+        <button onclick="submitFeedback()">Submit</button>
+    </div>
+
+    <script>
+        const stars = document.querySelectorAll('.star');
+        let rating = 0;
+
+        stars.forEach(star => {
+            star.addEventListener('click', function() {
+                rating = parseInt(this.getAttribute('data-rating'));
+                updateStars(rating);
+            });
+        });
+
+        function updateStars(rating) {
+            stars.forEach(star => {
+                if (parseInt(star.getAttribute('data-rating')) <= rating) {
+                    star.classList.add('selected');
+                } else {
+                    star.classList.remove('selected');
+                }
+            });
+        }
+
+        function submitFeedback() {
+            const feedbackText = document.getElementById('feedbackText').value.trim();
+            
+            if (rating === 0) {
+                alert("Please select a rating before submitting.");
+                return;
+            }
+            if (feedbackText === "") {
+                alert("Please enter some feedback before submitting.");
+                return;
+            }
+
+            console.log('Rating:', rating);
+            console.log('Feedback:', feedbackText);
+
+            alert('Thank you for your feedback!');
+
+            // Clear the feedback form
+            document.getElementById('feedbackText').value = '';
+            updateStars(0);
+
+            // Redirect back to the Rooms Selection page
+            window.location.href = "rooms.html"; // Change the filename if needed
+        }
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest Check-In</title>
+    <link rel="stylesheet" href="checkin2.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <img src="cimso.png" alt="Cimso Logo">
+    </div>
+
+    <div class="center-container">
+        <div class="login-container">
+            <select id="language-select">
+                <option value="en">English</option>
+                <option value="my">Myanmar</option> <!-- Changed "es" to "my" -->
+                <option value="th">Thai</option>
+            </select>
+
+            <h2 id="title">Guest Check-In</h2>
+
+            <form id="loginForm">
+                <label for="username" id="guestLabel">Guest Name:</label>
+                <input type="text" id="username" required>
+
+                <label for="checkin-date" id="dateLabel">Check-In Date:</label>
+                <input type="date" id="checkin-date" required>
+
+                <button type="submit" id="loginBtn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

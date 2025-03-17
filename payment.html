@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment & Verification</title>
+    <link rel="stylesheet" href="checkin2.css">
+</head>
+<body>
+
+    <div class="center-container">
+        <div class="payment-container">
+            <h2>Payment & Verification</h2>
+            <form id="paymentForm">
+                <label for="passport-upload">Upload Passport:</label>
+                <input type="file" id="passport-upload" required>
+
+                <label for="selfie-upload">Upload Selfie:</label>
+                <input type="file" id="selfie-upload" required>
+
+                <label for="credit-card">Enter Credit Card Number:</label>
+                <input type="text" id="credit-card" placeholder="1234-5678-9012-3456" required>
+
+                <label for="rooming-list">Update Rooming List:</label>
+                <textarea id="rooming-list" placeholder="Add or update guest names..." required></textarea>
+
+                <button type="submit">Check In</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Add your check-in completion logic here.
+            alert("Check-in completed!");
+
+            // Redirect to the feedback page
+            window.location.href = "feedback.html";
+        });
+    </script>
+</body>
+</html>

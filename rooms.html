@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooms Selection</title>
+    <link rel="stylesheet" href="checkin2.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <h1>Welcome To Our Hotel</h1>
+        </div>
+        <div class="nav_center">
+            <img src="cimso.png" alt="Cimso Logo">
+        </div>
+        <div class="nav-right">
+            <button id="open-chat">💬 Chat with Gemini AI</button>
+        </div>
+    </nav>
+
+    <!-- Rooms Section -->
+    <div class="rooms-container">
+        <div class="room">
+            <a href="payment.html">
+            <img src="room1.jpg" alt="Room 1"></a>
+            <p>Luxury Suite with a stunning view.</p>
+        </div>
+        <div class="room">
+            <a href="payment.html">
+            <img src="room2.jpg" alt="Room 2"></a>
+            <p>Cozy and comfortable stay for families.</p>
+        </div>
+        <div class="room">
+            <a href="payment.html">
+            <img src="room3.jpg" alt="Room 3"></a>
+            <p>Relax in our premium king-size room.</p>
+        </div>
+        <div class="room">
+            <a href="payment.html">
+            <img src="room4.jpg" alt="Room 4"></a>
+            <p>Beautiful room with traditional decor.</p>
+        </div>
+        <div class="room">
+            <a href="payment.html">
+            <img src="room5.jpg" alt="Room 5"></a>
+            <p>Modern design with a luxurious touch.</p>
+        </div>
+        <div class="room">
+            <a href="payment.html">
+            <img src="room6.jpg" alt="Room 6"></a>
+            <p>Experience elegance and style here.</p>
+        </div>
+    </div>
+
+    <!-- Chatbox -->
+    <div id="chatbox">
+        <div id="chat-header">
+            <h4>Gemini AI Chat</h4>
+            <button id="close-chat">✖</button>
+        </div>
+        <div id="chat-messages"></div>
+        <form id="chat-form">
+            <input type="text" id="chat-input" placeholder="Type your message here..." required />
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
